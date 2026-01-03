@@ -1,0 +1,14 @@
+{
+    "agents": [
+        "codex",
+        "gemini",
+        "opencode"
+    ],
+    "editors": [
+        "vscode"
+    ],
+    "guidelines": [
+        "laravel/fortify"
+    ],
+    "sail": true
+}

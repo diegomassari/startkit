@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "voomp";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0.002 247.839);
+  --color-base-300: oklch(96% 0.003 264.542);
+  --color-base-content: #364153;
+  --color-primary: #FC5A17;
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: #051325;
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(26.861% 0 0);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(0% 0 0);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(92% 0.006 264.531);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: oklch(72% 0.219 149.579);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(79% 0.184 86.047);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(63% 0.237 25.331);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.28125rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+
+
+/**
+    The lines above are intact.
+    The lines below were added by maryUI installer.
+*/
+
+/** daisyUI */
+@plugin "daisyui" {
+    themes: voomp --default, dark --prefersdark;
+}
+
+/* maryUI */
+@source "../../vendor/robsontenorio/mary/src/View/Components/**/*.php";
+
+/* Theme toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/**
+* Paginator - Traditional style
+* Because Laravel defaults does not match well the design of daisyUI.
+*/
+
+.mary-table-pagination span[aria-current="page"] > span {
+    @apply bg-primary text-base-100
+}
+
+.mary-table-pagination button {
+    @apply cursor-pointer
+}
